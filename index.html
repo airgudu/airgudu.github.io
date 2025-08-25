@@ -110,14 +110,34 @@
     form button:hover {
       background: #0056b3;
     }
+
+    /* Header flex for logo and text */
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-content img {
+      height: 60px;
+      margin-right: 20px;
+    }
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <h1>Air Gudu</h1>
-    <p>Making the invisible visible in a changing atmosphere</p>
+    <div class="header-content">
+      <!-- Logo -->
+      <img src="logoAirGudu.png" alt="Air Gudu Logo">
+      <!-- Title and slogan -->
+      <div>
+        <h1>Air Gudu</h1>
+        <p>Making the invisible visible in a changing atmosphere</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
     <nav>
       <a href="#about">About</a>
       <a href="#products">Products</a>
@@ -181,4 +201,5 @@
 
 </body>
 </html>
+
 
