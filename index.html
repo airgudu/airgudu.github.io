@@ -14,15 +14,24 @@
       background: #f4f4f9;
       color: #333;
     }
+
+    /* Header styles */
     header {
-      background: #0a2540;
+      background: #000000; /* Black background */
       color: white;
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem; /* Bigger title */
+      color: #007bff; /* Blue color */
+    }
+    header p {
+      font-size: 1.5rem;
+      color: #66b2ff; /* Lighter blue for slogan */
+      font-style: italic; /* Poetic/cursive feel */
+      margin-top: 0.5rem;
     }
     nav {
       margin-top: 1rem;
@@ -36,6 +45,8 @@
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* Section styles */
     section {
       padding: 3rem 2rem;
       max-width: 1000px;
@@ -45,6 +56,8 @@
       color: #0a2540;
       margin-bottom: 1rem;
     }
+
+    /* Footer */
     footer {
       background: #0a2540;
       color: white;
@@ -52,6 +65,8 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    /* Product cards */
     .product-card {
       background: white;
       border: 1px solid #ddd;
@@ -59,6 +74,41 @@
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Product links */
+    .product-link {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .product-link:hover {
+      background: #0056b3;
+    }
+
+    /* Contact form */
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+    }
+    form button {
+      background: #007bff;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #0056b3;
     }
   </style>
 </head>
@@ -71,6 +121,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -94,21 +145,33 @@
     <h2>Products & Tools</h2>
 
     <div class="product-card">
-      <h3>ERA5 Interactive Map</h3>
+      <h3>Maps</h3>
       <p>
-        A tool to generate professional meteorological maps from ERA5
-        reanalysis datasets.
+        Generate professional meteorological maps from ERA5 reanalysis datasets.
       </p>
+      <a href="#" class="product-link">Go to Maps</a>
     </div>
 
     <div class="product-card">
-      <h3>Time Series Generator</h3>
+      <h3>Temporal Series</h3>
       <p>
-        An application to extract and analyse meteorological time
-        series for specific regions.
+        Extract and analyse meteorological time series for specific regions.
       </p>
+      <a href="#" class="product-link">Go to Temporal Series</a>
     </div>
 
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to collaborate? Send us a message:</p>
+    <form>
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="email" name="email" placeholder="Your Email">
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
   <!-- Footer -->
@@ -118,3 +181,4 @@
 
 </body>
 </html>
+
