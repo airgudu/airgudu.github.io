@@ -1,11 +1,120 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi página en GitHub</title>
+  <meta charset="UTF-8">
+  <title>Air Gudu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #0a2540;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #0a2540;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #0a2540;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-    <h1>¡Hola! Soy Air Gudu</h1>
-    <p>Esta es mi primera página web publicada con GitHub Pages 🚀</p>
+
+  <!-- Header -->
+  <header>
+    <h1>Air Gudu</h1>
+    <p>Innovative Meteorological Solutions</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Air Gudu</strong>, we develop innovative tools and services
+      for meteorological analysis, tailored for research, aviation,
+      and real-time decision-making.
+    </p>
+    <p>
+      Our mission is to transform complex atmospheric data into
+      clear, accessible, and actionable information for professionals
+      and organisations.
+    </p>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Products & Tools</h2>
+
+    <div class="product-card">
+      <h3>ERA5 Interactive Map</h3>
+      <p>
+        A tool to generate professional meteorological maps from ERA5
+        reanalysis datasets.
+      </p>
+    </div>
+
+    <div class="product-card">
+      <h3>Time Series Generator</h3>
+      <p>
+        An application to extract and analyse meteorological time
+        series for specific regions.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Air Gudu - All rights reserved</p>
+  </footer>
+
 </body>
 </html>
