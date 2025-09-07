@@ -1,253 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Air Gudu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background: #f4f4f9;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <title>Air Gudu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* General styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+      scroll-behavior: smooth; /* smooth transitions */
+    }
 
-        /* Header styles */
-        header {
-            background: white; /* White background */
-            color: #007bff;
-            padding: 2rem 0; /* More vertical padding */
-            text-align: center;
-            /* Positioning for fixed header */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .header-content {
-            display: block; /* Change from flex to block for centering */
-            text-align: center;
-        }
-        .header-content h1 {
-            margin: 0;
-            font-size: 4rem; /* Even bigger title */
-            color: #007bff;
-            font-family: Georgia, serif; /* Professional font style */
-        }
-        .header-content p {
-            font-size: 2rem; /* Bigger slogan */
-            color: #66b2ff;
-            font-style: italic;
-            margin-top: 0.5rem;
-            font-family: Georgia, serif;
-        }
-        nav {
-            margin-top: 1.5rem; /* More space below text */
-            text-align: center;
-        }
-        nav a, .dropbtn {
-            color: #007bff;
-            margin: 0 1.5rem; /* More space between links */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            transition: background 0.3s ease;
-        }
-        nav a:hover, .dropbtn:hover {
-            background: rgba(0, 123, 255, 0.1);
-            border-radius: 5px;
-        }
+    /* Header */
+    header {
+      background: white;
+      color: #007bff;
+      height: 70px; /* smaller height */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 45px;
+      margin-right: 10px;
+    }
+    .logo h1 {
+      font-size: 1.5rem;
+      color: #007bff;
+      font-family: Georgia, serif;
+    }
+    nav a, .dropbtn {
+      color: #007bff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.3rem 0.6rem;
+      transition: background 0.3s ease;
+    }
+    nav a:hover, .dropbtn:hover {
+      background: rgba(0, 123, 255, 0.1);
+      border-radius: 5px;
+    }
 
-        /* Dropdown for Products */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 220px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 5px;
-            padding: 0.5rem 0;
-            text-align: left;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-weight: normal;
-            margin: 0; /* Override margin from parent a */
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      padding: 0.5rem 0;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-        /* Section styles */
-        section {
-            padding: 3rem 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        section h2 {
-            color: #0a2540;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #007bff; /* Underline effect for titles */
-            padding-bottom: 0.5rem;
-        }
+    /* Sections full-screen */
+    section {
+      height: 100vh; /* full viewport height */
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    section h2 {
+      color: #0a2540;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
 
-        /* Footer */
-        footer {
-            background: #0a2540;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
+    /* Product cards */
+    .product-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
-        /* Product cards */
-        .product-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    /* Contact form */
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    form button {
+      background: #007bff;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #0056b3;
+    }
 
-        /* Contact form */
-        form input, form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-        }
-        form button {
-            background: #007bff;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        form button:hover {
-            background: #0056b3;
-        }
-        
-        /* About image */
-        .about-image {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-        }
-    </style>
+    /* Footer */
+    footer {
+      background: #0a2540;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .logo h1 { font-size: 1.2rem; }
+      nav a { font-size: 0.9rem; margin: 0 0.5rem; }
+      section { padding: 4rem 1rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <h1>Air Gudu</h1>
-            <p>Making the invisible visible in a changing atmosphere</p>
+  <header>
+    <div class="logo">
+      <img src="logoAirGudu.png" alt="Air Gudu Logo">
+      <h1>Air Gudu</h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <div class="dropdown">
+        <a href="#products" class="dropbtn">Products</a>
+        <div class="dropdown-content">
+          <a href="#weather-maps">Weather maps</a>
+          <a href="#temporal-series">Meteorological temporal series</a>
+          <a href="#utilities">Utilities</a>
         </div>
-        <nav>
-            <a href="#about">About</a>
-            <div class="dropdown">
-                <a href="#products" class="dropbtn">Products</a>
-                <div class="dropdown-content">
-                    <a href="#weather-maps">Weather maps</a>
-                    <a href="#temporal-series">Meteorological temporal series</a>
-                    <a href="#utilities">Utilities</a>
-                </div>
-            </div>
-            <a href="#tutorials">Tutorials</a>
-            <a href="#freeware">Freeware</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+      </div>
+      <a href="#tutorials">Tutorials</a>
+      <a href="#freeware">Freeware</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>
-            At <strong>Air Gudu</strong>, we develop innovative tools and services
-            for meteorological analysis, tailored for research, aviation,
-            and real-time decision-making.
-        </p>
-        <p>
-            Our mission is to transform complex atmospheric data into
-            clear, accessible, and actionable information for professionals
-            and organisations.
-        </p>
-        <img src="Gudu%20Arid%20reales%20con%20mapa%20de%20t2m.png"
-             alt="About Air Gudu"
-             class="about-image">
-    </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Air Gudu</strong>, we develop innovative tools and services
+      for meteorological analysis, tailored for research, aviation,
+      and real-time decision-making.
+    </p>
+    <p>
+      Our mission is to transform complex atmospheric data into
+      clear, accessible, and actionable information for professionals
+      and organisations.
+    </p>
+    <img src="Gudu%20Arid%20reales%20con%20mapa%20de%20t2m.png"
+         alt="About Air Gudu"
+         style="max-width:800px;width:100%;border-radius:8px;margin-top:20px;">
+  </section>
 
-    <section id="products">
-        <h2>Products & Tools</h2>
-        <div id="weather-maps" class="product-card">
-            <h3>Weather Maps</h3>
-            <p>
-                Generate professional meteorological maps from ERA5 reanalysis datasets.
-            </p>
-        </div>
+  <section id="products">
+    <h2>Products & Tools</h2>
+    <div id="weather-maps" class="product-card">
+      <h3>Weather Maps</h3>
+      <p>Generate professional meteorological maps from ERA5 reanalysis datasets.</p>
+    </div>
+    <div id="temporal-series" class="product-card">
+      <h3>Temporal Series</h3>
+      <p>Extract and analyse meteorological time series for specific regions.</p>
+    </div>
+    <div id="utilities" class="product-card">
+      <h3>Utilities</h3>
+      <p>A collection of supplementary tools for meteorological data handling and visualization.</p>
+    </div>
+  </section>
 
-        <div id="temporal-series" class="product-card">
-            <h3>Temporal Series</h3>
-            <p>
-                Extract and analyse meteorological time series for specific regions.
-            </p>
-        </div>
-        
-        <div id="utilities" class="product-card">
-            <h3>Utilities</h3>
-            <p>
-                A collection of supplementary tools for meteorological data handling and visualization.
-            </p>
-        </div>
-    </section>
+  <section id="tutorials">
+    <h2>Tutorials</h2>
+    <p>Here you can find guides and video tutorials on how to use our products effectively.</p>
+  </section>
 
-    <section id="tutorials">
-        <h2>Tutorials</h2>
-        <p>
-            Here you can find guides and video tutorials on how to use our products effectively.
-        </p>
-    </section>
+  <section id="freeware">
+    <h2>Freeware</h2>
+    <p>A selection of free tools and resources for the meteorological community.</p>
+  </section>
 
-    <section id="freeware">
-        <h2>Freeware</h2>
-        <p>
-            A selection of free tools and resources for the meteorological community.
-        </p>
-    </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to collaborate? Send us a message:</p>
+    <form onsubmit="event.preventDefault(); alert('Thanks for your message!');">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to collaborate? Send us a message:</p>
-        <form>
-            <input type="text" name="name" placeholder="Your Name">
-            <input type="email" name="email" placeholder="Your Email">
-            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Air Gudu - All rights reserved</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Air Gudu - All rights reserved</p>
+  </footer>
 
 </body>
 </html>
+
