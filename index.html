@@ -1,175 +1,253 @@
-
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Air Gudu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    /* General styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f4f4f9;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <title>Air Gudu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #f4f4f9;
+            color: #333;
+        }
 
-    /* Header styles */
-    header {
-      background: white; /* Fondo blanco */
-      color: #007bff; /* Color de texto principal azul */
-      padding: 1rem 0; /* Padding ajustado */
-      text-align: center;
-      display: flex; /* Usamos flexbox para alinear elementos */
-      align-items: center; /* Centrar verticalmente */
-      justify-content: space-between; /* Espaciar logo y texto/nav */
-      padding-left: 20px; /* Separación del borde izquierdo */
-      padding-right: 20px; /* Separación del borde derecho */
-      border-bottom: 1px solid #eee; /* Línea sutil al final del header */
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      height: 100px; /* Altura del contenedor del logo */
-    }
-    .header-left img {
-      height: 100px; /* Logo más grande, ocupa toda la altura del contenedor */
-      margin-right: 20px;
-      object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
-    }
-    .header-text {
-      flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
-      text-align: left; /* Alinea el texto a la izquierda */
-      margin-left: 20px;
-    }
-    .header-text h1 {
-      margin: 0;
-      font-size: 3.5rem; /* Título más grande */
-      color: #007bff; /* Color azul */
-      font-family: Georgia, serif; /* Estilo de letra profesional */
-      width: 100%; /* Ocupa todo el ancho disponible */
-    }
-    .header-text p {
-      font-size: 1.8rem; /* Slogan más grande */
-      color: #66b2ff; /* Azul más claro para el eslogan */
-      font-style: italic; /* Poético/cursiva */
-      margin-top: 0.5rem;
-      font-family: Georgia, serif; /* Estilo de letra profesional */
-      width: 100%; /* Ocupa todo el ancho disponible */
-    }
-    nav {
-      margin-top: 0; /* Quitado el margen superior para la nav */
-      display: flex;
-      gap: 1.5rem; /* Espacio entre los elementos de navegación */
-    }
-    nav a {
-      color: #007bff; /* Color azul para los enlaces */
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    nav a:hover {
-      background: rgba(0, 123, 255, 0.1); /* Fondo sutil al pasar el ratón */
-      text-decoration: none;
-    }
+        /* Header styles */
+        header {
+            background: white; /* White background */
+            color: #007bff;
+            padding: 2rem 0; /* More vertical padding */
+            text-align: center;
+            /* Positioning for fixed header */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: block; /* Change from flex to block for centering */
+            text-align: center;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 4rem; /* Even bigger title */
+            color: #007bff;
+            font-family: Georgia, serif; /* Professional font style */
+        }
+        .header-content p {
+            font-size: 2rem; /* Bigger slogan */
+            color: #66b2ff;
+            font-style: italic;
+            margin-top: 0.5rem;
+            font-family: Georgia, serif;
+        }
+        nav {
+            margin-top: 1.5rem; /* More space below text */
+            text-align: center;
+        }
+        nav a, .dropbtn {
+            color: #007bff;
+            margin: 0 1.5rem; /* More space between links */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease;
+        }
+        nav a:hover, .dropbtn:hover {
+            background: rgba(0, 123, 255, 0.1);
+            border-radius: 5px;
+        }
 
-    /* Dropdown for Products */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      left: 0;
-      border-radius: 5px;
-      padding: 0.5rem 0;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-      font-weight: normal; /* No negrita en los ítems del desplegable */
-    }
-    .dropdown-content a:hover {
-      background-color: #ddd;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+        /* Dropdown for Products */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 0.5rem 0;
+            text-align: left;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: normal;
+            margin: 0; /* Override margin from parent a */
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-    /* Section styles (minimal for index, as content is in separate pages) */
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center; /* Centrar el mensaje de bienvenida */
-    }
-    section h2 {
-      color: #0a2540;
-      margin-bottom: 1rem;
-    }
+        /* Section styles */
+        section {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        section h2 {
+            color: #0a2540;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #007bff; /* Underline effect for titles */
+            padding-bottom: 0.5rem;
+        }
 
-    /* Footer */
-    footer {
-      background: #0a2540;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+        /* Footer */
+        footer {
+            background: #0a2540;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Product cards */
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Contact form */
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+        form button {
+            background: #007bff;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #0056b3;
+        }
+        
+        /* About image */
+        .about-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-left">
-      <img src="logoAirGudu.png" alt="Air Gudu Logo">
-      </div>
-    <div class="header-text">
-        <h1>Air Gudu</h1>
-        <p>Haciendo visible lo invisible en una atmósfera cambiante</p>
-    </div>
-
-    <nav>
-      <a href="about.html" onclick="alert('Abriendo página About...')">About</a>
-      <div class="dropdown">
-        <a href="#" class="dropbtn" onclick="return false;">Products</a>
-        <div class="dropdown-content">
-          <a href="products-weather-maps.html" onclick="alert('Abriendo página Weather Maps...')">Weather maps</a>
-          <a href="products-temporal-series.html" onclick="alert('Abriendo página Meteorological temporal series...')">Meteorological temporal series</a>
-          <a href="products-utilities.html" onclick="alert('Abriendo página Utilities...')">Utilities</a>
+    <header>
+        <div class="header-content">
+            <h1>Air Gudu</h1>
+            <p>Making the invisible visible in a changing atmosphere</p>
         </div>
-      </div>
-      <a href="tutorials.html" onclick="alert('Abriendo página Tutorials...')">Tutorials</a>
-      <a href="freeware.html" onclick="alert('Abriendo página Freeware...')">Freeware</a>
-      <a href="contact.html" onclick="alert('Abriendo página Contact...')">Contact</a>
-    </nav>
-  </header>
+        <nav>
+            <a href="#about">About</a>
+            <div class="dropdown">
+                <a href="#products" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="#weather-maps">Weather maps</a>
+                    <a href="#temporal-series">Meteorological temporal series</a>
+                    <a href="#utilities">Utilities</a>
+                </div>
+            </div>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#freeware">Freeware</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <section>
-    <h2>Bienvenido a Air Gudu</h2>
-    <p>Explora nuestras soluciones para el análisis meteorológico. Utiliza el menú de navegación para acceder a nuestras secciones.</p>
-    <p>Para ver el diseño del logo y el encabezado:</p>
-    <p>
-</p>
-  </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            At <strong>Air Gudu</strong>, we develop innovative tools and services
+            for meteorological analysis, tailored for research, aviation,
+            and real-time decision-making.
+        </p>
+        <p>
+            Our mission is to transform complex atmospheric data into
+            clear, accessible, and actionable information for professionals
+            and organisations.
+        </p>
+        <img src="Gudu%20Arid%20reales%20con%20mapa%20de%20t2m.png"
+             alt="About Air Gudu"
+             class="about-image">
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Air Gudu - All rights reserved</p>
-  </footer>
+    <section id="products">
+        <h2>Products & Tools</h2>
+        <div id="weather-maps" class="product-card">
+            <h3>Weather Maps</h3>
+            <p>
+                Generate professional meteorological maps from ERA5 reanalysis datasets.
+            </p>
+        </div>
+
+        <div id="temporal-series" class="product-card">
+            <h3>Temporal Series</h3>
+            <p>
+                Extract and analyse meteorological time series for specific regions.
+            </p>
+        </div>
+        
+        <div id="utilities" class="product-card">
+            <h3>Utilities</h3>
+            <p>
+                A collection of supplementary tools for meteorological data handling and visualization.
+            </p>
+        </div>
+    </section>
+
+    <section id="tutorials">
+        <h2>Tutorials</h2>
+        <p>
+            Here you can find guides and video tutorials on how to use our products effectively.
+        </p>
+    </section>
+
+    <section id="freeware">
+        <h2>Freeware</h2>
+        <p>
+            A selection of free tools and resources for the meteorological community.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to collaborate? Send us a message:</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="email" name="email" placeholder="Your Email">
+            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Air Gudu - All rights reserved</p>
+    </footer>
 
 </body>
 </html>
