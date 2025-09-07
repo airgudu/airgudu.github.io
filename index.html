@@ -2,248 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air Gudu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* General styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
       background: #f4f4f9;
       color: #333;
-      scroll-behavior: smooth; /* smooth transitions */
     }
 
-    /* Header */
+    /* Header fijo */
     header {
-      background: white;
-      color: #007bff;
-      height: 70px; /* smaller height */
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 45px;
-      margin-right: 10px;
-    }
-    .logo h1 {
-      font-size: 1.5rem;
-      color: #007bff;
-      font-family: Georgia, serif;
-    }
-    nav a, .dropbtn {
-      color: #007bff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      padding: 0.3rem 0.6rem;
-      transition: background 0.3s ease;
-    }
-    nav a:hover, .dropbtn:hover {
-      background: rgba(0, 123, 255, 0.1);
-      border-radius: 5px;
-    }
-
-    /* Dropdown */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 220px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      border-radius: 5px;
-      padding: 0.5rem 0;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      font-weight: normal;
-    }
-    .dropdown-content a:hover {
-      background-color: #ddd;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Sections full-screen */
-    section {
-      height: 100vh; /* full viewport height */
-      padding: 5rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+      width: 100%;
+      background: #1a2a40;
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-    }
-    section h2 {
-      color: #0a2540;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #007bff;
-      padding-bottom: 0.5rem;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
     }
 
-    /* Product cards */
-    .product-card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    /* Logo y título */
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* Contact form */
-    form input, form textarea {
+    .logo-container img {
+      height: 40px;
+    }
+
+    .site-title {
+      margin: 0.3rem 0 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .site-slogan {
+      margin: 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    /* Menú */
+    nav {
+      margin-top: 0.5rem;
       width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: Arial, sans-serif;
-    }
-    form textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-    form button {
-      background: #007bff;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background: #0056b3;
     }
 
-    /* Footer */
-    footer {
-      background: #0a2540;
-      color: white;
-      text-align: center;
-      padding: 1rem;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .logo h1 { font-size: 1.2rem; }
-      nav a { font-size: 0.9rem; margin: 0 0.5rem; }
-      section { padding: 4rem 1rem; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Contenido */
+    main {
+      padding: 8rem 2rem 3rem; /* espacio para no tapar el header */
+      max-width: 1000px;
+      margin: auto;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">
-      <img src="logoAirGudu.png" alt="Air Gudu Logo">
-      <h1>Air Gudu</h1>
+    <div class="logo-container">
+      <img src="logoAirGudu.png" alt="Air Gudu logo">
+      <h1 class="site-title">Air Gudu</h1>
+      <p class="site-slogan">Innovative Tools for Weather & Climate Data</p>
     </div>
     <nav>
-      <a href="#about">About</a>
-      <div class="dropdown">
-        <a href="#products" class="dropbtn">Products</a>
-        <div class="dropdown-content">
-          <a href="#weather-maps">Weather maps</a>
-          <a href="#temporal-series">Meteorological temporal series</a>
-          <a href="#utilities">Utilities</a>
-        </div>
-      </div>
-      <a href="#tutorials">Tutorials</a>
-      <a href="#freeware">Freeware</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="about.html" data-section="about">About</a></li>
+        <li><a href="products.html" data-section="products">Products</a></li>
+        <li><a href="weather.html" data-section="weather">Weather Maps</a></li>
+        <li><a href="contact.html" data-section="contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      At <strong>Air Gudu</strong>, we develop innovative tools and services
-      for meteorological analysis, tailored for research, aviation,
-      and real-time decision-making.
-    </p>
-    <p>
-      Our mission is to transform complex atmospheric data into
-      clear, accessible, and actionable information for professionals
-      and organisations.
-    </p>
-    <img src="Gudu%20Arid%20reales%20con%20mapa%20de%20t2m.png"
-         alt="About Air Gudu"
-         style="max-width:800px;width:100%;border-radius:8px;margin-top:20px;">
-  </section>
+  <main id="content">
+    <!-- Aquí se cargará el contenido de cada sección -->
+  </main>
 
-  <section id="products">
-    <h2>Products & Tools</h2>
-    <div id="weather-maps" class="product-card">
-      <h3>Weather Maps</h3>
-      <p>Generate professional meteorological maps from ERA5 reanalysis datasets.</p>
-    </div>
-    <div id="temporal-series" class="product-card">
-      <h3>Temporal Series</h3>
-      <p>Extract and analyse meteorological time series for specific regions.</p>
-    </div>
-    <div id="utilities" class="product-card">
-      <h3>Utilities</h3>
-      <p>A collection of supplementary tools for meteorological data handling and visualization.</p>
-    </div>
-  </section>
+  <script>
+    // Función para cargar una sección en el main
+    async function loadSection(file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error("Error loading " + file);
+        const html = await response.text();
+        document.getElementById("content").innerHTML = html;
+      } catch (err) {
+        document.getElementById("content").innerHTML =
+          "<p style='color:red;'>Section could not be loaded.</p>";
+      }
+    }
 
-  <section id="tutorials">
-    <h2>Tutorials</h2>
-    <p>Here you can find guides and video tutorials on how to use our products effectively.</p>
-  </section>
+    // Configurar navegación
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const file = link.getAttribute("href");
+        loadSection(file);
+      });
+    });
 
-  <section id="freeware">
-    <h2>Freeware</h2>
-    <p>A selection of free tools and resources for the meteorological community.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or want to collaborate? Send us a message:</p>
-    <form onsubmit="event.preventDefault(); alert('Thanks for your message!');">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Air Gudu - All rights reserved</p>
-  </footer>
-
+    // Cargar sección inicial (About por defecto)
+    loadSection("about.html");
+  </script>
 </body>
 </html>
+
 
