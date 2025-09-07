@@ -1,1 +1,17 @@
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    At <strong>Air Gudu</strong>, we develop innovative tools and services
+    for meteorological analysis, tailored for research, aviation,
+    and real-time decision-making.
+  </p>
+  <p>
+    Our mission is to transform complex atmospheric data into
+    clear, accessible, and actionable information for professionals
+    and organisations.
+  </p>
+  <img src="Gudu%20Arid%20reales%20con%20mapa%20de%20t2m.png"
+       alt="About Air Gudu"
+       style="width:100%; max-width:800px; display:block; margin:20px auto; border-radius:8px;">
+</section>
 
