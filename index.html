@@ -95,15 +95,20 @@
   </main>
 
   <script>
-    // Cargar el header desde header.html
+    // Cargar el header desde header.html y mostrar errores si los hay
     fetch("header.html")
-      .then(res => res.text())
+      .then(res => {
+        if (!res.ok) throw new Error("Header not found: " + res.status);
+        return res.text();
+      })
       .then(data => {
         document.getElementById("header").innerHTML = data;
-      });
+      })
+      .catch(err => console.error("Error loading header:", err));
   </script>
 </body>
 </html>
+
 
 
 
