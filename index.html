@@ -8,133 +8,102 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       background: #f4f4f9;
       color: #333;
     }
 
-    /* Header fijo */
+    /* Header */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #1a2a40;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background: white;
+      border-bottom: 1px solid #ddd;
       padding: 0.5rem 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
       z-index: 1000;
     }
 
-    /* Logo y título */
-    .logo-container {
+    .header-container {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      gap: 1rem;
     }
 
-    .logo-container img {
-      height: 40px;
+    .logo img {
+      height: 60px; /* logo ocupa toda la altura */
+    }
+
+    .title-block {
+      text-align: center;
     }
 
     .site-title {
-      margin: 0.3rem 0 0;
-      font-size: 1.5rem;
+      margin: 0;
+      font-size: 1.8rem;
       font-weight: bold;
+      color: #0056b3; /* azul principal */
     }
 
     .site-slogan {
       margin: 0;
       font-size: 0.9rem;
       font-style: italic;
-      color: #ddd;
+      color: #3399ff; /* azul más claro */
+      font-family: "Georgia", serif; /* fuente diferente */
     }
 
-    /* Menú */
     nav {
       margin-top: 0.5rem;
-      width: 100%;
     }
 
     nav ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
+      padding: 0;
+      margin: 0;
     }
 
     nav a {
-      color: white;
       text-decoration: none;
       font-weight: bold;
+      color: #0056b3;
       transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #ffcc00;
+      color: #3399ff;
     }
 
-    /* Contenido */
     main {
-      padding: 8rem 2rem 3rem; /* espacio para no tapar el header */
-      max-width: 1000px;
+      padding: 8rem 2rem 3rem; /* espacio para el header */
+      max-width: 900px;
       margin: auto;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="logoAirGudu.png" alt="Air Gudu logo">
-      <h1 class="site-title">Air Gudu</h1>
-      <p class="site-slogan">Innovative Tools for Weather & Climate Data</p>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="about.html" data-section="about">About</a></li>
-        <li><a href="products.html" data-section="products">Products</a></li>
-        <li><a href="weather.html" data-section="weather">Weather Maps</a></li>
-        <li><a href="contact.html" data-section="contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Aquí se insertará el header -->
+  <div id="header"></div>
 
-  <main id="content">
-    <!-- Aquí se cargará el contenido de cada sección -->
+  <main>
+    <h2>Welcome to Air Gudu</h2>
+    <p>This is the homepage. Explore our sections to learn more.</p>
   </main>
 
   <script>
-    // Función para cargar una sección en el main
-    async function loadSection(file) {
-      try {
-        const response = await fetch(file);
-        if (!response.ok) throw new Error("Error loading " + file);
-        const html = await response.text();
-        document.getElementById("content").innerHTML = html;
-      } catch (err) {
-        document.getElementById("content").innerHTML =
-          "<p style='color:red;'>Section could not be loaded.</p>";
-      }
-    }
-
-    // Configurar navegación
-    document.querySelectorAll("nav a").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const file = link.getAttribute("href");
-        loadSection(file);
+    // Cargar el header desde header.html
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
       });
-    });
-
-    // Cargar sección inicial (About por defecto)
-    loadSection("about.html");
   </script>
 </body>
 </html>
+
 
 
