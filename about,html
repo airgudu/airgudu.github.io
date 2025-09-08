@@ -1,17 +1,64 @@
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    At <strong>Air Gudu</strong>, we develop innovative tools and services
-    for meteorological analysis, tailored for research, aviation,
-    and real-time decision-making.
-  </p>
-  <p>
-    Our mission is to transform complex atmospheric data into
-    clear, accessible, and actionable information for professionals
-    and organisations.
-  </p>
-  <img src="Gudu%20Arid%20reales%20con%20mapa%20de%20t2m.png"
-       alt="About Air Gudu"
-       style="width:100%; max-width:800px; display:block; margin:20px auto; border-radius:8px;">
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Air Gudu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    main {
+      padding: 10rem 2rem 3rem; /* espacio para header fijo */
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #0056b3;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main>
+    <h2>About Air Gudu</h2>
+    <p>Air Gudu develops tools that make it easier for individuals, professionals, and organisations to exploit and understand atmospheric data available today. Our mission is to help users interpret our rapidly changing atmosphere and apply this knowledge across multiple fields, from air pollution and climate change to insurance, renewable energy, agriculture, tourism, and aviation.</p>
+    
+    <p>We offer a range of solutions, from Python scripts for advanced users to intuitive executables for those who simply want to generate maps, animations, time series, or tailored results without programming skills.</p>
+    
+    <p>Our products are designed to make complex atmospheric and meteorological data accessible and actionable, enabling better analysis, interpretation, and decision-making.</p>
+    
+    <p>Air Gudu also has an educational component: we provide tutorials and guidance to help users understand what atmospheric variables mean, how to use them effectively, and where to access the data. Additionally, we release selected freeware tools in simplified versions, allowing users to try our software before exploring the full professional features.</p>
+    
+    <p>By combining science, technology, and accessibility, Air Gudu empowers users to turn invisible data into knowledge, awareness, and impact.</p>
+  </main>
+
+  <script>
+    // Cargar el header desde header.html con control de errores
+    fetch("header.html?v=1")
+      .then(res => {
+        if (!res.ok) throw new Error("Header not found: " + res.status);
+        return res.text();
+      })
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading header:", err));
+  </script>
+</body>
+</html>
 
