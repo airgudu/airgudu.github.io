@@ -12,51 +12,34 @@
       color: #333;
     }
 
-    /* Header */
-    header {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
     main {
-      padding: 8rem 2rem 3rem; /* espacio para el header */
+      padding: 10rem 2rem 3rem; /* espacio para el header */
       max-width: 900px;
       margin: auto;
     }
   </style>
 </head>
 <body>
-  <!-- Aquí se insertará el header -->
+  <!-- Header dinámico -->
   <div id="header"></div>
 
-  <!-- Aquí se insertará el contenido del about -->
-  <main id="content"></main>
+  <main>
+    <h2>Welcome to Air Gudu</h2>
+    <p>This is the homepage. Explore our sections to learn more.</p>
+  </main>
 
   <script>
-    // Cargar el header
+    // Cargar el header dinámicamente
     fetch("header.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("header").innerHTML = data;
       })
       .catch(err => console.error("Error loading header:", err));
-
-    // Cargar la sección about por defecto
-    fetch("about.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("content").innerHTML = data;
-      })
-      .catch(err => console.error("Error loading about:", err));
   </script>
 </body>
 </html>
+
 
 
 
