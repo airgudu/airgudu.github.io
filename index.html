@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air Gudu</title>
-  <!-- Redirección automática al About -->
-  <meta http-equiv="refresh" content="0; url=about.html">
   <style>
     body {
       margin: 0;
@@ -26,60 +24,6 @@
       z-index: 1000;
     }
 
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .logo img {
-      height: 60px; /* logo ocupa toda la altura */
-    }
-
-    .title-block {
-      text-align: center;
-    }
-
-    .site-title {
-      margin: 0;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #0056b3; /* azul principal */
-    }
-
-    .site-slogan {
-      margin: 0;
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #3399ff; /* azul más claro */
-      font-family: "Georgia", serif; /* fuente diferente */
-    }
-
-    nav {
-      margin-top: 0.5rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #0056b3;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #3399ff;
-    }
-
     main {
       padding: 8rem 2rem 3rem; /* espacio para el header */
       max-width: 900px;
@@ -91,25 +35,29 @@
   <!-- Aquí se insertará el header -->
   <div id="header"></div>
 
-  <main>
-    <h2>Redirecting...</h2>
-    <p>If you are not redirected automatically, <a href="about.html">click here</a>.</p>
-  </main>
+  <!-- Aquí se insertará el contenido del about -->
+  <main id="content"></main>
 
   <script>
-    // Cargar el header desde header.html
+    // Cargar el header
     fetch("header.html")
-      .then(res => {
-        if (!res.ok) throw new Error("Header not found: " + res.status);
-        return res.text();
-      })
+      .then(res => res.text())
       .then(data => {
         document.getElementById("header").innerHTML = data;
       })
       .catch(err => console.error("Error loading header:", err));
+
+    // Cargar la sección about por defecto
+    fetch("about.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("content").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading about:", err));
   </script>
 </body>
 </html>
+
 
 
 
