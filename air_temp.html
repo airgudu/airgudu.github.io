@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surface Air Temperature Maps | Air Gudu</title>
+  <title>ERA5 Surface Air Temperature Maps | Air Gudu</title>
   <style>
     body {
       margin: 0;
@@ -15,7 +15,7 @@
     }
 
     main {
-      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
+      padding: 10rem 2rem 3rem;
       max-width: 900px;
       margin: auto;
       text-align: justify;
@@ -27,6 +27,33 @@
       margin-bottom: 0.75rem;
       font-size: 1.8rem;
     }
+
+    h2 {
+      color: #0a2540;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .about-image, .download-section {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 80%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .download-section a {
+      color: #0a2540;
+      text-decoration: none;
+    }
+
+    .download-section a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -34,10 +61,45 @@
   <div id="header"></div>
 
   <main>
-    <h1>Surface Air Temperature Maps</h1>
+    <h1>ERA5 Surface Air Temperature Maps. Single and Multiple Options</h1>
+
     <p>
-      Next information
+      Generate high-resolution surface air temperature (t2m) maps directly from ERA5 hourly surface data. 
+      These tools require ERA5 2m temperature datasets as input and allow you to select the region, 
+      time period, and visual style. The output includes clear maps and animations that highlight both 
+      spatial temperature patterns and their temporal evolution. ERA5 2m temperature datasets are freely 
+      available from the <a href="https://cds.climate.copernicus.eu/" target="_blank">Copernicus Climate Data Store (CDS)</a>.
     </p>
+
+    <h2>Single Map</h2>
+    <p>
+      Create a single ERA5 2m temperature map for a selected region and time. Simply define the latitude 
+      and longitude boundaries, select the date and hour, and choose a colormap for the visualization. 
+      The resulting map can be exported as both PNG and PDF.
+    </p>
+
+    <div class="about-image">
+      <img src="AridGudut2m.png" alt="ERA5 2m Temperature Map">
+    </div>
+
+    <div class="download-section">
+      <h2>Download Map Tools – Single</h2>
+      <p>
+        <strong>Executable (.exe)</strong><br>
+        Access: <a href="[Link to Download exe]" target="_blank">Download exe</a><br>
+        Price: 29.99 $<br>
+        Documentation: User guide – Free. <a href="#">Link</a>
+      </p>
+      <p>
+        <strong>Python Script</strong><br>
+        Access: <a href="https://air-gudu.itch.io/era5-2m-temperature-map-generator-python-script" target="_blank">
+          Python Script</a><br>
+        Price: 9.99 $<br>
+        Documentation: Readme – Free. 
+        <a href="https://air-gudu.itch.io/free-readme-era5-single-date-2-metre-temperature-map-generator" target="_blank">
+          Link</a>
+      </p>
+    </div>
   </main>
 
   <script>
@@ -50,6 +112,7 @@
   </script>
 </body>
 </html>
+
 
 
 
