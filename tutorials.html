@@ -1,19 +1,46 @@
-<section id="tutorials">
-  <h2>Tutorials</h2>
-  <p>
-    Here you can find guides, step-by-step instructions, and video tutorials
-    on how to use our products effectively.
-  </p>
-  
-  <ul>
-    <li><strong>Weather Maps:</strong> Learn how to generate and customize professional meteorological maps.</li>
-    <li><strong>Temporal Series:</strong> How to extract and analyse meteorological time series for specific regions.</li>
-    <li><strong>Utilities:</strong> Tips for using supplementary tools for data visualization and processing.</li>
-  </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Maps | Air Gudu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      background: #f4f4f9;
+      color: #333;
+    }
 
-  <p>
-    All tutorials are designed for researchers, meteorologists, and aviation professionals
-    to make the most out of Air Gudu tools.
-  </p>
-</section>
+    main {
+      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
+      max-width: 900px;
+      margin: auto;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header dinámico -->
+  <div id="header"></div>
+
+  <main>
+    <p>
+     Tutorials soon
+    </p>
+  </main>
+
+  <script>
+    // Cargar el header dinámicamente
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading header:", err));
+  </script>
+</body>
+</html>
 
