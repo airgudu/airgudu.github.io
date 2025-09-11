@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Maps | Air Gudu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    main {
+      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
+      max-width: 900px;
+      margin: auto;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header dinámico -->
+  <div id="header"></div>
+
+  <main>
+    <p>
+      Wind tools.
+    </p>
+  </main>
+
+  <script>
+    // Cargar el header dinámicamente
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading header:", err));
+  </script>
+</body>
+</html>
+
 
