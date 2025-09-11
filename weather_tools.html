@@ -1,229 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Maps | Air Gudu</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --brand-blue: #0a2540;
-      --accent-blue: #007bff;
-      --muted: #6b7280;
-      --bg: #f4f6f9;
-      --card-bg: #ffffff;
+    body {
+      margin: 0;
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      background: #f4f4f9;
+      color: #333;
     }
 
-    html,body{
-      height:100%;
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: var(--bg);
-      color: #222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* Placeholder for header loaded dynamically */
-    #header { }
-
-    main{
-      max-width:1100px;
-      margin: 4.5rem auto 3rem; /* leave space for header */
-      padding: 0 1.25rem;
-    }
-
-    .page-title{
-      color: var(--brand-blue);
-      font-size: 2.25rem;
-      line-height: 1.05;
-      margin: 0 0 0.75rem 0;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .lead{
-      font-size: 1.05rem;
-      color: #2b3440;
-      margin: 0 0 1.25rem 0;
-      font-weight: 500;
-    }
-
-    .intro-card{
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 6px 20px rgba(13, 23, 40, 0.07);
-      border: 1px solid rgba(10,37,64,0.04);
-      margin-bottom: 1.75rem;
-    }
-
-    .intro-text{
-      color: #2e3a46;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* highlight variables */
-    .var {
-      background: linear-gradient(90deg, rgba(10,37,64,0.04), rgba(10,37,64,0.01));
-      padding: 0.12rem 0.4rem;
-      border-radius: 6px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-      color: var(--brand-blue);
-      font-weight:600;
-      margin-right:0.25rem;
-    }
-
-    /* Image / hero thumbnail */
-    .hero-thumb{
-      margin-top: 1.25rem;
-      display:flex;
-      gap:1rem;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .thumb-card{
-      flex: 1 1 48%;
-      min-width:240px;
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      border-radius: 10px;
-      padding: 0.75rem;
-      border: 1px solid rgba(10,37,64,0.04);
-      box-shadow: 0 6px 18px rgba(13,23,40,0.04);
-      display:flex;
-      gap:0.75rem;
-      align-items:center;
-    }
-    .thumb-card img{
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .thumb-card .caption{
-      font-size:0.95rem;
-      color:var(--muted);
-      margin-top:0.5rem;
-    }
-
-    /* CTA area */
-    .cta-row{
-      margin-top: 1.5rem;
-      display:flex;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-block;
-      background: var(--accent-blue);
-      color:white;
-      padding: 0.65rem 1.15rem;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow: 0 6px 18px rgba(3,102,214,0.12);
-    }
-    .btn.secondary{
-      background: transparent;
-      color: var(--brand-blue);
-      border: 1px solid rgba(10,37,64,0.08);
-    }
-
-    /* Responsive */
-    @media (max-width:720px){
-      .page-title { font-size:1.6rem; }
-      .thumb-card { flex-basis: 100%; }
+    main {
+      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
+      max-width: 900px;
+      margin: auto;
+      text-align: justify;
     }
   </style>
 </head>
 <body>
-
-  <!-- header injected dynamically -->
+  <!-- Header dinámico -->
   <div id="header"></div>
 
   <main>
-    <header class="page-header">
-      <h1 class="page-title">Weather Maps</h1>
-      <p class="lead">Visualise the atmosphere with clarity — maps built from robust reanalysis and observation data.</p>
-    </header>
-
-    <section class="intro-card" aria-labelledby="intro-heading">
-      <div class="intro-text" id="intro-heading">
-        <p>
-          Our <strong>Weather Maps</strong> tools transform raw atmospheric data, such as
-          <span class="var">surface air temperature (T2m)</span>,
-          <span class="var">mean sea level pressure (MSLP)</span>,
-          <span class="var">wind</span>,
-          <span class="var">total cloud cover</span>, and
-          <span class="var">total precipitation</span>;
-          into clear, visual maps. These maps provide a spatial representation of the atmosphere,
-          making it easier to understand weather patterns, identify trends, and support decision-making
-          in fields like aviation, renewable energy, agriculture, and environmental monitoring.
-        </p>
-      </div>
-
-      <!-- thumbnail mockups: placeholder images you can replace -->
-      <div class="hero-thumb" aria-hidden="false">
-        <div class="thumb-card">
-          <div style="flex:1">
-            <img src="map_thumbnail_1.png" alt="ERA5 temperature map thumbnail">
-            <div class="caption">Global T2m overview — interactive maps available</div>
-          </div>
-        </div>
-
-        <div class="thumb-card">
-          <div style="flex:1">
-            <img src="map_thumbnail_2.png" alt="ERA5 pressure map thumbnail">
-            <div class="caption">MSLP contours and synoptic patterns</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn" href="#weathermaps">Explore Weather Maps</a>
-        <a class="btn secondary" href="freeware.html">Browse Freeware & Tutorials</a>
-      </div>
-    </section>
-
-    <!-- Optional: quick list of map types (visual cards) -->
-    <section style="margin-top:1.6rem;">
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
-        <article style="background:var(--card-bg); padding:1rem; border-radius:10px; border:1px solid rgba(10,37,64,0.04)">
-          <h3 style="margin:0 0 0.5rem 0; color:var(--brand-blue)">Temperature (T2m)</h3>
-          <p style="margin:0; color:var(--muted); font-size:0.95rem;">Hourly and daily maps of 2m temperature across multiple regions and global scales.</p>
-        </article>
-
-        <article style="background:var(--card-bg); padding:1rem; border-radius:10px; border:1px solid rgba(10,37,64,0.04)">
-          <h3 style="margin:0 0 0.5rem 0; color:var(--brand-blue)">Pressure (MSLP)</h3>
-          <p style="margin:0; color:var(--muted); font-size:0.95rem;">Contour maps for synoptic analysis and aviation decision support.</p>
-        </article>
-
-        <article style="background:var(--card-bg); padding:1rem; border-radius:10px; border:1px solid rgba(10,37,64,0.04)">
-          <h3 style="margin:0 0 0.5rem 0; color:var(--brand-blue)">Wind & Clouds</h3>
-          <p style="margin:0; color:var(--muted); font-size:0.95rem;">Vector wind fields and cloud fraction visualisations to identify transport and coverage.</p>
-        </article>
-
-        <article style="background:var(--card-bg); padding:1rem; border-radius:10px; border:1px solid rgba(10,37,64,0.04)">
-          <h3 style="margin:0 0 0.5rem 0; color:var(--brand-blue)">Precipitation</h3>
-          <p style="margin:0; color:var(--muted); font-size:0.95rem;">Total precipitation maps for episode analysis and hydrological applications.</p>
-        </article>
-      </div>
-    </section>
-
+    <p>
+      Our Weather Maps tools transform raw atmospheric data, such as surface air temperature (T2M),
+      mean sea level pressure (MSLP), wind, total cloud cover, and total precipitation; into clear,
+      visual maps. These maps provide a spatial representation of the atmosphere, making it easier
+      to understand weather patterns, identify trends, and support decision-making in fields like
+      aviation, renewable energy, agriculture, and environmental monitoring.
+    </p>
   </main>
 
   <script>
-    // Load the same header fragment as other pages
+    // Cargar el header dinámicamente
     fetch("header.html")
       .then(res => res.text())
-      .then(data => { document.getElementById("header").innerHTML = data; })
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
       .catch(err => console.error("Error loading header:", err));
   </script>
 </body>
 </html>
+
 
