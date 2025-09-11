@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Maps | Air Gudu</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Calibri, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.4;
-      background: #f4f4f9;
-      color: #333;
-    }
-
-    main {
-      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
-      max-width: 900px;
-      margin: auto;
-      text-align: justify;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surface Air Temperature Maps</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header dinámico -->
-  <div id="header"></div>
-
-  <main>
-    <p>
-    Cloud cover tools.
-    </p>
-  </main>
-
-  <script>
-    // Cargar el header dinámicamente
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      })
-      .catch(err => console.error("Error loading header:", err));
-  </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="weather.html">Weather Mapping Tools</a>
+                    <ul>
+                        <li><a href="air_temp.html">Surface Air Temperature</a></li>
+                        <li><a href="mslp.html">Mean Sea Level Pressure</a></li>
+                        <li><a href="wind.html">Wind Surface</a></li>
+                        <li><a href="precipitation.html">Precipitation</a></li>
+                        <li><a href="cloudcover.html">Cloud Cover</a></li>
+                    </ul>
+                </li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <h1>Cloud cover Maps</h1>
+            <p>
+                Aquí puedes poner tu texto o imágenes explicando los mapas de temperatura en superficie.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Weather Tools. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
+
+
 
 
