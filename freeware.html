@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Maps | Air Gudu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      background: #f4f4f9;
+      color: #333;
+    }
 
+    main {
+      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
+      max-width: 900px;
+      margin: auto;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header dinámico -->
+  <div id="header"></div>
+
+  <main>
+    <p>
+      NetCDF Reader – Free Tool.
+Easily load and explore any NetCDF (.nc) file with this simple executable. Upon selecting the input file, the tool automatically generates a report with the same filename (editable if desired) and displays the information on screen. The output includes both a TXT summary and a PDF report, providing a clear overview of the dataset’s contents. This freeware tool is ideal for quickly inspecting NetCDF files without requiring programming knowledge.
+
+    </p>
+  </main>
+
+  <script>
+    // Cargar el header dinámicamente
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading header:", err));
+  </script>
+</body>
+</html>
