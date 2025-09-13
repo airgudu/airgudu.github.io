@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surface Air Temperature Maps | Air Gudu</title>
+  <title>ERA5 Mean Sea Level Pressure Maps | Air Gudu</title>
   <style>
     body {
       margin: 0;
@@ -15,7 +15,7 @@
     }
 
     main {
-      padding: 10rem 2rem 3rem; /* espacio para el header fijo */
+      padding: 10rem 2rem 3rem;
       max-width: 900px;
       margin: auto;
       text-align: justify;
@@ -27,6 +27,33 @@
       margin-bottom: 0.75rem;
       font-size: 1.8rem;
     }
+
+    h2 {
+      color: #0a2540;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .about-image, .download-section {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 80%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .download-section a {
+      color: #0a2540;
+      text-decoration: none;
+    }
+
+    .download-section a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -34,10 +61,72 @@
   <div id="header"></div>
 
   <main>
-    <h1>MSLP Maps</h1>
+    <!-- Título principal -->
+    <h1>ERA5 Mean Sea Level Presure Maps. Single and Multiple Options</h1>
+
+    <!-- Texto introductorio -->
     <p>
-      More information soon.
+     Create high-resolution mean sea level pressure (MSLP) maps using ERA5 hourly surface data. 
+    These tools take ERA5 MSLP datasets as input and let you define the region, time range, and visual style. The resulting maps 
+      and animations clearly illustrate both the spatial distribution of pressure and its changes over time. ERA5 MSLP datasets are freely 
+      available from the <a href="https://cds.climate.copernicus.eu/" target="_blank">Copernicus Climate Data Store (CDS)</a>.
     </p>
+
+    <!-- Single Map -->
+    <h2>Single Map</h2>
+    <p>
+      Create a single ERA5 mean sea level pressure (MSLP) map for a 
+      chosen region and time. Simply set the latitude and longitude boundaries, 
+      pick the date and hour, and select a colormap for the visualization. The generated map can be exported as PNG and PDF.
+    </p>
+
+    <div class="about-image">
+      <img src="Image_AridGudutmslp.png" alt="ERA5 2m Temperature Map">
+    </div>
+
+    <div class="download-section">
+      <h2>Download Map Tools – Single</h2>
+      <p>
+        <strong>Executable (.exe)</strong><br>
+        Access: <a href="[Link to Download exe]" target="_blank">Download exe</a><br>
+        Price: 29.99 $<br>
+        Documentation: User guide – Free. <a href="#">Link</a>
+      </p>
+      <p>
+        <strong>Python Script</strong><br>
+        Access: <a href="https://air-gudu.itch.io/era5-2m-temperature-map-generator-python-script" target="_blank">
+          Python Script</a><br>
+        Price: 9.99 $<br>
+        Documentation: Readme – Free. 
+        <a href="https://air-gudu.itch.io/free-readme-era5-single-date-2-metre-temperature-map-generator" target="_blank">
+          Link</a>
+      </p>
+    </div>
+
+    <!-- Multiple Maps -->
+    <h2>Multiple Maps</h2>
+    <p>
+     Through these tools, generate a series of ERA5 mean sea level pressure (MSLP) maps 
+      for a specified start and end date and time. Set the latitude and longitude boundaries,
+      define the time interval, choose a colormap, and specify output filenames and titles for each map. 
+      The maps can be exported individually as PNG files, compiled into a single PDF, and automatically 
+      converted into an animated GIF and MP4 video to illustrate temporal changes.
+    </p>
+
+    <div class="about-image">
+      <img src="Image_Anim_Eur_T2m_200425.gif" alt="Air Gudu Logo">
+    </div>
+
+    <div class="download-section">
+      <h2>Download Map Tools – Multiple</h2>
+      <p>
+        <strong>Executable (.exe)</strong><br>
+        Access: <a href="[Link to Download exe]" target="_blank">Download exe</a><br>
+        Price: 49.99 $<br>
+        Documentation: User guide – Free. <a href="#">Link</a>
+      </p>
+    </div>
+
   </main>
 
   <script>
@@ -49,6 +138,7 @@
       .catch(err => console.error("Error loading header:", err));
   </script>
 </body>
+</html>
 
 
 
