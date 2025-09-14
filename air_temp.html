@@ -9,95 +9,93 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   
   <style>
-   body {
-  margin: 0;
-  font-family: 'Open Sans', Arial, sans-serif;  /* Fuente profesional tipo Copernicus */
-  font-size: 16px;      /* Tamaño base del texto */
-  line-height: 1.6;     /* Interlineado cómodo */
-  background: #f4f4f9;  /* Fondo claro */
-  color: #333333;       /* Texto principal oscuro */
-  text-align: justify;   /* Opcional: texto justificado como en tu main */
-}
+    /* Estilos generales */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333333;
+      text-align: justify;
+    }
 
     main {
-  max-width: 1024px;     /* ancho máximo cómodo en pantallas grandes */
-  margin: 0 auto;         /* centra el contenido horizontalmente */
-  padding: 11rem 2rem 3rem; /* espacio arriba, laterales y abajo */
-  text-align: justify;    /* texto justificado, elegante y profesional */
-}
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 11rem 2rem 3rem;
+      text-align: justify;
+    }
 
     h1 {
-  color: #0056A6;       /* Azul institucional elegante */
-  font-size: 2rem;      /* ~32px, título grande */
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;     /* Interlineado más compacto para títulos */
-}
+      color: #0056A6;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
 
-   h2 {
-  color: #555555;       /* Gris medio, elegante para subtítulos */
-  font-size: 1.5rem;    /* ~24px */
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;     /* Interlineado ligeramente menor para subtítulos */
-}
+    h2 {
+      color: #555555;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
 
-   /* Título de descarga (antes h2, ahora h3) */
-h3 {
-  color: #333333;       /* gris oscuro, menos intenso que h2 */
-  font-size: 1.25rem;   /* ~20px, un poco más pequeño que h2 */
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
+    /* Título de descarga */
+    h3 {
+      color: #333333;
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
 
-/* Párrafos dentro de la sección de descargas */
-.download-section p {
-  font-size: 0.9rem;      /* 16px, tamaño cómodo para lectura */
-  line-height: 1.5;     
-  margin-bottom: 1rem;
-  text-align: center;   /* opcional: centra el texto y enlaces */
-}
-
-/* Enlaces dentro de la sección de descargas */
-.download-section a {
-  color: #0056A6;       /* azul institucional */
-  text-decoration: none;
-  font-weight: 600;     /* un poco más destacado que el texto normal */
-}
-
-.download-section a:hover {
-  text-decoration: underline;
-}
- 
     p {
-  font-size: 16px;      /* Texto de los párrafos */
-  line-height: 1.6;     /* Interlineado cómodo para lectura */
-  margin-bottom: 1rem;
-}
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
 
-.about-image, .download-section {
-  margin-top: 1.5rem;
-  text-align: center;
-}
+    /* Sección de imágenes */
+    .about-image, .download-section {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
 
-.about-image img {
-  max-width: 60%;      /* ajusta el tamaño de todas las imágenes dentro de .about-image */
-  height: auto;        /* mantiene la proporción */
-  display: block;      /* centra la imagen */
-  margin: 2rem auto;   /* espacio arriba y abajo */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+    .about-image img {
+      max-width: 60%;
+      height: auto;
+      display: block;
+      margin: 2rem auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
 
-.download-section a {
-  color: #0a2540;
-  text-decoration: none;
-}
+    /* Sección de descargas */
+    .download-section p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-.download-section a:hover {
-  text-decoration: underline;
-}
+    .download-section a {
+      color: #0056A6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .download-section a:hover {
+      text-decoration: underline;
+    }
+
+    .download-section .price {
+      font-weight: 600;
+      color: #0a2540;
+      margin-left: 0.3rem;
+    }
   </style>
 </head>
 <body>
@@ -129,18 +127,18 @@ h3 {
       <img src="Image_AridGudut2m.png" alt="ERA5 2m Temperature Map">
     </div>
 
+    <!-- Sección de descargas Single Map -->
     <div class="download-section">
-      <h3>Download Map Tools – Single</h2>
+      <h3>Download Map Tools – Single</h3>
       <p>
         <strong>Executable (.exe)</strong><br>
-        Access: <a href="#">Download exe</a> | Price: 29.99 $
-
+        Access: <a href="#">Download exe</a> <span class="price">| Price: 29.99 $</span><br>
         Documentation: User guide – Free. <a href="#">Link</a>
       </p>
       <p>
         <strong>Python Script</strong><br>
         Access: <a href="https://air-gudu.itch.io/era5-2m-temperature-map-generator-python-script" target="_blank">
-      Python Script</a> <span class="price">| Price: 9.99 $</span>
+        Python Script</a> <span class="price">| Price: 9.99 $</span><br>
         Documentation: Readme – Free. 
         <a href="https://air-gudu.itch.io/free-readme-era5-single-date-2-metre-temperature-map-generator" target="_blank">
           Link</a>
@@ -160,16 +158,15 @@ h3 {
       <img src="Image_Anim_Eur_T2m_200425.gif" alt="Air Gudu Logo">
     </div>
 
+    <!-- Sección de descargas Multiple Map -->
     <div class="download-section">
-      <h3>Download Map Tools – Multiple</h2>
+      <h3>Download Map Tools – Multiple</h3>
       <p>
         <strong>Executable (.exe)</strong><br>
-        Access: <a href="[Link to Download exe]" target="_blank">Download exe</a><br>
-        Price: 49.99 $<br>
+        Access: <a href="[Link to Download exe]" target="_blank">Download exe</a> <span class="price">| Price: 49.99 $</span><br>
         Documentation: User guide – Free. <a href="#">Link</a>
       </p>
     </div>
-
   </main>
 
   <script>
@@ -182,6 +179,7 @@ h3 {
   </script>
 </body>
 </html>
+
 
 
 
