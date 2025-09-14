@@ -41,7 +41,36 @@
   margin-bottom: 0.5rem;
   line-height: 1.3;     /* Interlineado ligeramente menor para subtítulos */
 }
-p {
+
+   /* Título de descarga (antes h2, ahora h3) */
+h3 {
+  color: #333333;       /* gris oscuro, menos intenso que h2 */
+  font-size: 1.25rem;   /* ~20px, un poco más pequeño que h2 */
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+/* Párrafos dentro de la sección de descargas */
+.download-section p {
+  font-size: 1rem;      /* 16px, tamaño cómodo para lectura */
+  line-height: 1.5;     
+  margin-bottom: 1rem;
+  text-align: center;   /* opcional: centra el texto y enlaces */
+}
+
+/* Enlaces dentro de la sección de descargas */
+.download-section a {
+  color: #0056A6;       /* azul institucional */
+  text-decoration: none;
+  font-weight: 600;     /* un poco más destacado que el texto normal */
+}
+
+.download-section a:hover {
+  text-decoration: underline;
+}
+ 
+    p {
   font-size: 16px;      /* Texto de los párrafos */
   line-height: 1.6;     /* Interlineado cómodo para lectura */
   margin-bottom: 1rem;
@@ -101,7 +130,7 @@ p {
     </div>
 
     <div class="download-section">
-      <h2>Download Map Tools – Single</h2>
+      <h3>Download Map Tools – Single</h2>
       <p>
         <strong>Executable (.exe)</strong><br>
         Access: <a href="[Link to Download exe]" target="_blank">Download exe</a><br>
@@ -133,7 +162,7 @@ p {
     </div>
 
     <div class="download-section">
-      <h2>Download Map Tools – Multiple</h2>
+      <h3>Download Map Tools – Multiple</h2>
       <p>
         <strong>Executable (.exe)</strong><br>
         Access: <a href="[Link to Download exe]" target="_blank">Download exe</a><br>
