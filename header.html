@@ -1,23 +1,23 @@
 <header>
-  <!-- Contenedor principal del header -->
+  <!-- Header principal -->
   <div class="header-container">
-    
     <!-- Logo a la izquierda -->
     <div class="logo">
       <img src="Image_logoAirGudu.png" alt="Air Gudu Logo">
     </div>
 
-    <!-- Nombre y slogan centrados -->
+    <!-- Nombre + slogan en la misma línea -->
     <div class="title-block">
       <span class="site-title">Air Gudu</span>
       <span class="site-slogan">Making the invisible visible in a changing atmosphere</span>
     </div>
   </div>
 
-  <!-- Menú de navegación -->
+  <!-- Menú principal -->
   <nav>
     <ul>
       <li><a href="about.html">About</a></li>
+
       <li class="dropdown">
         <a href="weather_tools.html">Weather Mapping Tools</a>
         <ul class="dropdown-content">
@@ -28,72 +28,78 @@
           <li><a href="cloudcover.html">Cloud Cover Maps</a></li>
         </ul>
       </li>
+
       <li><a href="freeware.html">Freeware</a></li>
       <li><a href="tutorials.html">Tutorials</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- Estilos CSS -->
   <style>
-    /* HEADER PRINCIPAL */
+    /* Header compacto */
     header {
-      background: white;               /* fondo blanco */
-      border-bottom: 1px solid #ddd;   /* línea inferior suave */
-      padding: 0.5rem 1rem;            /* espacio interno */
-      position: fixed;                  /* siempre visible al hacer scroll */
-      width: 100%;                      /* ocupa todo el ancho */
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 0.3rem 1rem; /* menos altura */
+      position: fixed;
+      width: 100%;
       top: 0;
-      z-index: 1000;                    /* por encima del resto de contenido */
+      z-index: 1000;
     }
 
-    /* Contenedor de logo + título */
+    /* Contenedor logo + texto */
     .header-container {
-      display: flex; 
-      align-items: center;              /* centra verticalmente */
-      justify-content: center;          /* centra horizontalmente */
-      gap: 2rem;                        /* espacio entre logo y texto */
-      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center; /* centrado vertical */
+      justify-content: flex-start;
+      gap: 1rem; /* menos espacio entre logo y texto */
+      padding: 0.3rem 0.5rem; /* reduce altura interna */
     }
 
     /* Logo */
     .logo img {
-      height: 70px;                     /* tamaño compacto pero visible */
+      height: 60px; /* tamaño adecuado */
       object-fit: contain;
     }
 
-    /* Bloque de nombre + slogan */
+    /* Bloque de texto (nombre + slogan) */
     .title-block {
       display: flex;
-      align-items: center;               /* centra verticalmente el texto */
-      gap: 1rem;                         /* separación entre título y slogan */
+      flex-direction: row; /* misma línea */
+      align-items: baseline; /* alineación elegante del texto */
+      justify-content: center;
+      gap: 1rem; /* espacio entre nombre y slogan */
+      flex: 1; /* ocupa todo el espacio horizontal disponible */
     }
 
-    /* Nombre de la web */
+    /* Nombre de la empresa */
     .site-title {
-      font-size: 2rem;                   /* grande para destacar */
-      font-weight: bold;
-      color: #0056b3;                    /* azul oscuro */
       font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: 700; /* bold */
+      font-size: 2rem;  /* grande para resaltar */
+      color: #0056b3;   /* azul oscuro */
     }
 
     /* Slogan */
     .site-slogan {
-      font-size: 1.5rem;                 /* suficientemente grande para verse */
-      color: #3399ff;                    /* azul más claro, elegante */
-      font-family: 'Open Sans', Arial, sans-serif;
-      font-style: normal;
+      font-family: 'Montserrat', 'Lato', sans-serif; /* atractivo y moderno */
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.5rem; /* proporcional al nombre */
+      color: #3399ff;    /* azul más claro */
     }
 
-    /* NAVEGACIÓN */
+    /* Menú principal */
     nav {
-      margin-top: 0.5rem;
+      margin-top: 0.2rem;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;           /* menú centrado */
-      gap: 2rem;                         /* espacio entre elementos */
+      justify-content: center;
+      gap: 2rem;
       padding: 0;
       margin: 0;
       position: relative;
@@ -105,14 +111,14 @@
 
     nav a {
       text-decoration: none;
-      font-weight: bold;
-      color: #0056b3;                   /* azul institucional */
-      transition: color 0.3s;
       font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: 600;
+      color: #0056b3;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #3399ff;                   /* azul más claro al pasar el mouse */
+      color: #3399ff;
     }
 
     /* Dropdown */
@@ -144,6 +150,8 @@
     }
   </style>
 </header>
+
+
 
 
 
