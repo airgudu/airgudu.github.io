@@ -1,15 +1,16 @@
 <header>
   <!-- Contenedor principal del header -->
   <div class="header-container">
+    
     <!-- Logo a la izquierda -->
     <div class="logo">
       <img src="Image_logoAirGudu.png" alt="Air Gudu Logo">
     </div>
 
-    <!-- Bloque central con título y eslogan -->
+    <!-- Nombre y slogan centrados -->
     <div class="title-block">
-      <h1 class="site-title">Air Gudu</h1>
-      <p class="site-slogan">Making the invisible visible in a changing atmosphere</p>
+      <span class="site-title">Air Gudu</span>
+      <span class="site-slogan">Making the invisible visible in a changing atmosphere</span>
     </div>
   </div>
 
@@ -17,7 +18,6 @@
   <nav>
     <ul>
       <li><a href="about.html">About</a></li>
-
       <li class="dropdown">
         <a href="weather_tools.html">Weather Mapping Tools</a>
         <ul class="dropdown-content">
@@ -28,7 +28,6 @@
           <li><a href="cloudcover.html">Cloud Cover Maps</a></li>
         </ul>
       </li>
-
       <li><a href="freeware.html">Freeware</a></li>
       <li><a href="tutorials.html">Tutorials</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -36,60 +35,56 @@
   </nav>
 
   <style>
-    /* Estilo general del header */
+    /* HEADER PRINCIPAL */
     header {
-      background: white;             /* Fondo blanco profesional */
-      border-bottom: 1px solid #ddd; /* Línea inferior suave */
-      padding: 0.5rem 2rem;          /* Espaciado interno */
-      position: fixed;                /* Siempre visible al hacer scroll */
-      width: 100%;
+      background: white;               /* fondo blanco */
+      border-bottom: 1px solid #ddd;   /* línea inferior suave */
+      padding: 0.5rem 1rem;            /* espacio interno */
+      position: fixed;                  /* siempre visible al hacer scroll */
+      width: 100%;                      /* ocupa todo el ancho */
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sutil sombra para separar del contenido */
+      z-index: 1000;                    /* por encima del resto de contenido */
     }
 
-    /* Contenedor del logo y título */
+    /* Contenedor de logo + título */
     .header-container {
-      display: flex;                 /* Flex para alinear horizontalmente */
-      align-items: center;
-      justify-content: flex-start;   /* Logo a la izquierda */
-      gap: 2rem;                     /* Espacio entre logo y bloque de título */
-      padding: 0.5rem 0;
+      display: flex; 
+      align-items: center;              /* centra verticalmente */
+      justify-content: center;          /* centra horizontalmente */
+      gap: 2rem;                        /* espacio entre logo y texto */
+      padding: 0.5rem 1rem;
     }
 
     /* Logo */
     .logo img {
-      height: 100px;                 /* Mayor tamaño para destacar */
+      height: 70px;                     /* tamaño compacto pero visible */
       object-fit: contain;
     }
 
-    /* Bloque del título y slogan */
+    /* Bloque de nombre + slogan */
     .title-block {
-      flex: 1;                        /* Ocupa el espacio restante */
-      text-align: center;             /* Centrado del título y eslogan */
+      display: flex;
+      align-items: center;               /* centra verticalmente el texto */
+      gap: 1rem;                         /* separación entre título y slogan */
     }
 
-    /* Título principal */
+    /* Nombre de la web */
     .site-title {
-      margin: 0;
-      font-family: 'Open Sans', Arial, sans-serif; /* Misma fuente que main */
-      font-size: 2rem;               /* Tamaño profesional y visible */
-      font-weight: 700;              /* Negrita */
-      color: #0056A6;                /* Azul institucional */
-      line-height: 1.2;
+      font-size: 2rem;                   /* grande para destacar */
+      font-weight: bold;
+      color: #0056b3;                    /* azul oscuro */
+      font-family: 'Open Sans', Arial, sans-serif;
     }
 
-    /* Eslogan */
+    /* Slogan */
     .site-slogan {
-      margin: 0;
-      font-family: 'Open Sans', Arial, sans-serif; /* Misma fuente que main */
-      font-size: 1rem;               /* Más pequeño que el título */
-      font-style: normal;            /* Quitamos cursiva para uniformidad */
-      color: #555555;                /* Gris elegante */
-      line-height: 1.3;
+      font-size: 1.5rem;                 /* suficientemente grande para verse */
+      color: #3399ff;                    /* azul más claro, elegante */
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-style: normal;
     }
 
-    /* Menú de navegación */
+    /* NAVEGACIÓN */
     nav {
       margin-top: 0.5rem;
     }
@@ -97,8 +92,8 @@
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;       /* Centrado del menú */
-      gap: 2rem;                     /* Espacio entre items */
+      justify-content: center;           /* menú centrado */
+      gap: 2rem;                         /* espacio entre elementos */
       padding: 0;
       margin: 0;
       position: relative;
@@ -108,17 +103,16 @@
       position: relative;
     }
 
-    /* Enlaces del menú */
     nav a {
       text-decoration: none;
-      font-family: 'Open Sans', Arial, sans-serif; /* Fuente uniforme */
-      font-weight: 600;
-      color: #0056A6;
+      font-weight: bold;
+      color: #0056b3;                   /* azul institucional */
       transition: color 0.3s;
+      font-family: 'Open Sans', Arial, sans-serif;
     }
 
     nav a:hover {
-      color: #3399ff;                /* Hover azul más claro */
+      color: #3399ff;                   /* azul más claro al pasar el mouse */
     }
 
     /* Dropdown */
@@ -126,22 +120,19 @@
       display: none;
       position: absolute;
       top: 100%;
-      left: 50%;                     /* Centrar respecto al item padre */
-      transform: translateX(-50%);
+      left: 0;
       background: white;
       border: 1px solid #ddd;
       list-style: none;
       padding: 0.5rem 0;
       min-width: 220px;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .dropdown-content li a {
       display: block;
       padding: 0.5rem 1rem;
-      color: #0056A6;
-      font-weight: 400;              /* Menos pesado que el menú principal */
+      color: #0056b3;
     }
 
     .dropdown-content li a:hover {
@@ -151,33 +142,9 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
-
-    /* Responsive: ajustes para pantallas pequeñas */
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .logo img {
-        height: 80px;  /* Ajuste logo para móvil */
-      }
-
-      .site-title {
-        font-size: 1.5rem;
-      }
-
-      .site-slogan {
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </header>
+
 
 
 
