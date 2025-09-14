@@ -1,5 +1,5 @@
 <header>
-  <!-- Header principal -->
+  <!-- Contenedor del header -->
   <div class="header-container">
     <!-- Logo a la izquierda -->
     <div class="logo">
@@ -9,11 +9,12 @@
     <!-- Nombre + slogan en la misma línea -->
     <div class="title-block">
       <span class="site-title">Air Gudu</span>
-      <span class="site-slogan">Making the invisible visible in a changing atmosphere</span>
+      <span class="separator">|</span>
+      <span class="site-slogan">"Making the invisible visible in a changing atmosphere"</span>
     </div>
   </div>
 
-  <!-- Menú principal -->
+  <!-- Menú de navegación -->
   <nav>
     <ul>
       <li><a href="about.html">About</a></li>
@@ -35,64 +36,66 @@
     </ul>
   </nav>
 
-  <!-- Estilos CSS -->
   <style>
-    /* Header compacto */
+    /* Header principal */
     header {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 0.3rem 1rem; /* menos altura */
-      position: fixed;
-      width: 100%;
+      background: white;              /* Fondo blanco */
+      border-bottom: 1px solid #ddd;  /* Línea inferior */
+      padding: 0.5rem 1rem;           /* Espaciado interno */
+      position: fixed;                /* Fijo en la parte superior */
+      width: 100%;                    
       top: 0;
       z-index: 1000;
     }
 
-    /* Contenedor logo + texto */
+    /* Contenedor del logo y título */
     .header-container {
       display: flex;
-      align-items: center; /* centrado vertical */
+      align-items: center;
       justify-content: flex-start;
-      gap: 1rem; /* menos espacio entre logo y texto */
-      padding: 0.3rem 0.5rem; /* reduce altura interna */
+      gap: 1rem;
+      padding: 0.5rem 1rem;
     }
 
     /* Logo */
     .logo img {
-      height: 60px; /* tamaño adecuado */
+      height: 70px;                  /* Ajusta altura para ocupar casi todo el header */
       object-fit: contain;
     }
 
-    /* Bloque de texto (nombre + slogan) */
+    /* Contenedor de nombre + slogan */
     .title-block {
       display: flex;
-      flex-direction: row; /* misma línea */
-      align-items: baseline; /* alineación elegante del texto */
-      justify-content: center;
-      gap: 1rem; /* espacio entre nombre y slogan */
-      flex: 1; /* ocupa todo el espacio horizontal disponible */
+      align-items: center;
+      gap: 0.5rem;                   /* Separación entre nombre, barra y slogan */
+      flex-wrap: wrap;                /* Ajuste en pantallas muy pequeñas */
     }
 
     /* Nombre de la empresa */
     .site-title {
       font-family: 'Open Sans', Arial, sans-serif;
-      font-weight: 700; /* bold */
-      font-size: 2rem;  /* grande para resaltar */
-      color: #0056b3;   /* azul oscuro */
+      font-weight: 700;               /* Negrita */
+      font-size: 2.2rem;             /* Tamaño grande */
+      color: #003366;                 /* Azul oscuro */
+    }
+
+    /* Separador visual */
+    .separator {
+      font-size: 2rem;
+      color: #888888;                /* Gris elegante */
     }
 
     /* Slogan */
     .site-slogan {
-      font-family: 'Montserrat', 'Lato', sans-serif; /* atractivo y moderno */
+      font-family: 'Merriweather', serif; /* Tipografía elegante y profesional */
+      font-size: 1.6rem;             /* Tamaño más grande que títulos de secciones */
       font-style: italic;
-      font-weight: 400;
-      font-size: 1.5rem; /* proporcional al nombre */
-      color: #3399ff;    /* azul más claro */
+      color: #3399ff;                /* Azul más claro */
     }
 
-    /* Menú principal */
+    /* Menú de navegación */
     nav {
-      margin-top: 0.2rem;
+      margin-top: 0.5rem;
     }
 
     nav ul {
@@ -111,8 +114,7 @@
 
     nav a {
       text-decoration: none;
-      font-family: 'Open Sans', Arial, sans-serif;
-      font-weight: 600;
+      font-weight: bold;
       color: #0056b3;
       transition: color 0.3s;
     }
@@ -150,6 +152,7 @@
     }
   </style>
 </header>
+
 
 
 
