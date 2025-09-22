@@ -1,14 +1,21 @@
-/* style.css - Estilos comunes */
+/* style.css - Estilos comunes para toda la web */
 
+/* ==============================
+   Body y fuente general
+   ============================== */
 body {
   margin: 0;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   background: #f4f4f9;
-  color: #333;
+  color: #333333;
+  text-align: justify;
 }
 
+/* ==============================
+   Contenedor principal
+   ============================== */
 main {
   max-width: 1024px;
   margin: 0 auto;
@@ -16,6 +23,9 @@ main {
   text-align: justify;
 }
 
+/* ==============================
+   Enlaces
+   ============================== */
 a {
   color: #0056A6;
   text-decoration: none;
@@ -24,3 +34,87 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* ==============================
+   Títulos
+   ============================== */
+h1 {
+  color: #0056A6;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+h2 {
+  color: #555555;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+h3 {
+  color: #666666;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+/* ==============================
+   Párrafos
+   ============================== */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+   Imágenes centradas
+   ============================== */
+.about-image {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+   Sección de descargas
+   ============================== */
+.download-section {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.download-section p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.download-section a {
+  color: #0056A6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.download-section a:hover {
+  text-decoration: underline;
+}
+
+.download-section .price {
+  font-weight: 600;
+  color: #0a2540;
+  margin-left: 0.3rem;
+}
+
