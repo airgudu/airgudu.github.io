@@ -5,139 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ERA5 Surface Air Temperature Maps | Air Gudu</title>
 
-  <!-- Fuente de Google Fonts: Open Sans -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ==============================
-       Estilos generales del body
-       ============================== */
-    body {
-      margin: 0; /* Quitar el margen por defecto del navegador */
-      font-family: 'Open Sans', Arial, sans-serif; /* Fuente profesional tipo Copernicus/NASA */
-      font-size: 16px; /* Tamaño base del texto */
-      line-height: 1.6; /* Interlineado cómodo para lectura */
-      background: #f4f4f9; /* Fondo claro con ligera tonalidad gris */
-      color: #333333; /* Color de texto principal oscuro */
-      text-align: justify; /* Justificar el texto por defecto */
-    }
 
-    /* ==============================
-       Estilos del contenedor principal
-       ============================== */
-    main {
-      max-width: 1024px; /* Ancho máximo cómodo en pantallas grandes */
-      margin: 0 auto; /* Centrar el contenido horizontalmente */
-      padding: 11rem 2rem 3rem; /* Espacio arriba (11rem), lateral (2rem) y abajo (3rem) */
-      text-align: justify; /* Texto justificado dentro de main */
-    }
-
-    /* ==============================
-       Título principal (h1)
-       ============================== */
-    h1 {
-      color: #0056A6; /* Azul institucional elegante */
-      font-size: 2rem; /* Aproximadamente 32px */
-      margin-top: 0; /* Sin margen superior */
-      margin-bottom: 0.75rem; /* Margen inferior reducido */
-      line-height: 1.2; /* Interlineado más compacto para títulos */
-    }
-
-    /* ==============================
-       Subtítulos (h2)
-       ============================== */
-    h2 {
-      color: #555555; /* Gris medio, elegante */
-      font-size: 1.5rem; /* Aproximadamente 24px */
-      margin-top: 2rem; /* Separación superior para diferenciar secciones */
-      margin-bottom: 0.5rem; /* Margen inferior más pequeño */
-      line-height: 1.3; /* Interlineado ligeramente menor */
-    }
-
-    /* ==============================
-       Títulos de descargas (h3)
-       ============================== */
-    h3 {
-      color: #666666; /* Gris oscuro, menos intenso que h2 */
-      font-size: 1.1rem; /* Aproximadamente 20px */
-      margin-top: 1.5rem; /* Separación superior de la sección */
-      margin-bottom: 0.5rem; /* Margen inferior */
-      line-height: 1.3; /* Interlineado */
-    }
-
-    /* ==============================
-       Párrafos generales
-       ============================== */
-    p {
-      font-size: 16px; /* Tamaño cómodo para lectura */
-      line-height: 1.6; /* Interlineado cómodo */
-      margin-bottom: 1rem; /* Espacio inferior entre párrafos */
-    }
-
-    /* ==============================
-       Contenedores de imágenes y descargas
-       ============================== */
-    .about-image, .download-section {
-      margin-top: 1.5rem; /* Separación superior */
-      text-align: center; /* Centrar contenido */
-    }
-
-    /* ==============================
-       Imágenes dentro de .about-image
-       ============================== */
-    .about-image img {
-      max-width: 60%; /* Tamaño máximo de la imagen */
-      height: auto; /* Mantener proporción original */
-      display: block; /* Bloque para centrar con margin auto */
-      margin: 2rem auto; /* Espacio arriba y abajo */
-      border-radius: 8px; /* Bordes redondeados */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra sutil */
-    }
-
-    /* ==============================
-       Sección de descargas: párrafos
-       ============================== */
-    .download-section p {
-      font-size: 0.9rem; /* Ligeramente más pequeño que el texto general */
-      line-height: 1.5; /* Interlineado cómodo */
-      margin-bottom: 1rem; /* Separación inferior */
-      text-align: center; /* Centrar texto y enlaces */
-    }
-
-    /* ==============================
-       Enlaces dentro de la sección de descargas
-       ============================== */
-    .download-section a {
-      color: #0056A6; /* Azul institucional */
-      text-decoration: none; /* Sin subrayado por defecto */
-      font-weight: 600; /* Destacar ligeramente sobre texto normal */
-    }
-
-    .download-section a:hover {
-      text-decoration: underline; /* Subrayado al pasar el ratón */
-    }
-
-    /* ==============================
-       Precio dentro de descargas
-       ============================== */
-    .download-section .price {
-      font-weight: 600; /* Destacado */
-      color: #0a2540; /* Gris oscuro */
-      margin-left: 0.3rem; /* Separación del enlace */
-    }
-
-  </style>
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ==============================
-       Header inyectado desde archivo externo
-       ============================== -->
+  <!-- Header inyectado desde archivo externo -->
   <div id="header"></div>
 
   <main>
-    <!-- ==============================
-         Título principal y descripción
-         ============================== -->
     <h1>ERA5 Surface Air Temperature Maps. Single and Multiple Options</h1>
 
     <p>
@@ -148,9 +26,6 @@
       available from the <a href="https://cds.climate.copernicus.eu/" target="_blank">Copernicus Climate Data Store (CDS)</a>.
     </p>
 
-    <!-- ==============================
-         Single Map
-         ============================== -->
     <h2>Single Map</h2>
     <p>
       Create a single ERA5 2m temperature map for a selected region and time. Simply define the latitude 
@@ -158,14 +33,10 @@
       The resulting map can be exported as both PNG and PDF.
     </p>
 
-    <!-- Imagen del Single Map -->
     <div class="about-image">
       <img src="Image_AridGudut2m.png" alt="ERA5 2m Temperature Map">
     </div>
 
-    <!-- ==============================
-         Sección de descargas: Single Map
-         ============================== -->
     <div class="download-section">
       <h3>Download Single Map Tools</h3>
       <p>
@@ -183,9 +54,6 @@
       </p>
     </div>
 
-    <!-- ==============================
-         Multiple Maps
-         ============================== -->
     <h2>Multiple Maps</h2>
     <p>
       Using these tools, produce a series of ERA5 2m surface temperature (T2M) maps between a specified start and end date and time. 
@@ -194,14 +62,10 @@
       and MP4 video, providing a clear visualization of temporal evolution.
     </p>
 
-    <!-- Imagen del Multiple Map (animación) -->
     <div class="about-image">
-      <img src="Image_Anim_Eur_T2m_200425.gif" alt="Air Gudu Logo">
+      <img src="Image_Anim_Eur_T2m_200425.gif" alt="ERA5 Multiple Temperature Maps Animation">
     </div>
 
-    <!-- ==============================
-         Sección de descargas: Multiple Map
-         ============================== -->
     <div class="download-section">
       <h3>Download Multiple Maps Tool</h3>
       <p>
@@ -210,12 +74,8 @@
         Documentation: User guide – Free. <a href="#">Link</a>
       </p>
     </div>
-
   </main>
 
-  <!-- ==============================
-       Script para cargar el header externo
-       ============================== -->
   <script>
     fetch("header.html")
       .then(res => res.text())
