@@ -1,0 +1,26 @@
+/* style.css - Estilos comunes */
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #f4f4f9;
+  color: #333;
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 11rem 2rem 3rem; /* espacio para header */
+  text-align: justify;
+}
+
+a {
+  color: #0056A6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
