@@ -6,7 +6,7 @@
       <img src="Image_logoAirGudu.png" alt="Air Gudu Logo">
     </div>
 
-    <!-- Nombre + slogan en la misma línea -->
+    <!-- Nombre + slogan -->
     <div class="title-block">
       <span class="site-title">Air Gudu</span>
       <span class="separator">|</span>
@@ -18,9 +18,7 @@
   <nav>
     <ul>
       <li><a href="about.html">About</a></li>
-
       <li class="dropdown">
-        <!-- Botón en lugar de enlace -->
         <button class="dropdown-toggle">Weather Mapping Tools ▾</button>
         <ul class="dropdown-content">
           <li><a href="air_temp.html">Air Temperature Maps</a></li>
@@ -34,33 +32,37 @@
   </nav>
 
   <style>
-    /* Header principal */
+    /* ======== Header general ======== */
     header {
       background: white;
       border-bottom: 1px solid #ddd;
-      padding: 0.5rem 1rem;
       position: fixed;
-      width: 100%;
       top: 0;
+      width: 100%;
       z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0; /* Padding trasladado al container */
     }
 
-    /* Contenedor del logo y título */
     .header-container {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       gap: 1rem;
-      padding: 0.5rem 1rem;
+      width: 100%;
+      max-width: 1024px;
+      padding: 0.5rem 1rem; /* padding interno uniforme */
+      box-sizing: border-box;
     }
 
-    /* Logo */
     .logo img {
       height: 80px;
       object-fit: contain;
+      display: block;
     }
 
-    /* Contenedor de nombre + slogan */
     .title-block {
       display: flex;
       align-items: center;
@@ -73,11 +75,13 @@
       font-weight: 700;
       font-size: 2.2rem;
       color: #003366;
+      margin: 0;
     }
 
     .separator {
       font-size: 2rem;
       color: #888888;
+      margin: 0;
     }
 
     .site-slogan {
@@ -85,11 +89,13 @@
       font-size: 1.6rem;
       font-style: italic;
       color: #3399ff;
+      margin: 0;
     }
 
-    /* Menú de navegación */
+    /* ======== Navegación ======== */
     nav {
-      margin-top: 0.5rem;
+      width: 100%;
+      margin-top: 0.3rem;
     }
 
     nav ul {
@@ -110,11 +116,12 @@
       text-decoration: none;
       font-weight: bold;
       color: #0056b3;
-      transition: color 0.3s;
       background: none;
       border: none;
       cursor: pointer;
       font-size: 1rem;
+      transition: color 0.3s;
+      padding: 0;
     }
 
     nav a:hover, .dropdown-toggle:hover {
@@ -145,39 +152,38 @@
       background: #f0f0f0;
     }
 
-    /* Mostrar en hover (escritorio) */
+    /* Hover desktop */
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    /* Mostrar al hacer clic (móviles) */
+    /* Open toggle móvil */
     .dropdown.open .dropdown-content {
       display: block;
     }
   </style>
 
   <script>
-    // Script para abrir/cerrar en móviles
     document.addEventListener("DOMContentLoaded", function () {
       const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
       dropdownToggles.forEach(toggle => {
         toggle.addEventListener("click", function (e) {
           e.preventDefault();
           const parent = this.closest(".dropdown");
 
-          // Cerrar otros menús si hubiera más
+          // Cerrar otros menús
           document.querySelectorAll(".dropdown.open").forEach(drop => {
             if (drop !== parent) drop.classList.remove("open");
           });
 
-          // Alternar el menú actual
+          // Alternar el actual
           parent.classList.toggle("open");
         });
       });
     });
   </script>
 </header>
+
 
 
 
