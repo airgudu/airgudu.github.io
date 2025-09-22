@@ -10,6 +10,8 @@ body {
   line-height: 1.6;
   background: #f4f4f9;
   color: #333333;
+  text-align: justify;
+  padding-top: 0; /* El header es fijo, main tiene padding propio */
 }
 
 /* ==============================
@@ -18,8 +20,8 @@ body {
 main {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 11rem 2rem 3rem; /* espacio para header fijo */
-  text-align: justify; /* solo main tiene justify */
+  padding: 11rem 2rem 3rem; /* espacio suficiente para header fijo */
+  text-align: justify;
 }
 
 /* ==============================
@@ -117,132 +119,6 @@ p {
   margin-left: 0.3rem;
 }
 
-/* ==============================
-   Header original (recuperado)
-   ============================== */
-header {
-  background: white;
-  border-bottom: 1px solid #ddd;
-  padding: 0.5rem 1rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  text-align: left; /* mantener a la izquierda */
-}
-
-/* Contenedor logo + título */
-.header-container {
-  display: flex;
-  align-items: flex-start; /* alinea logo y texto arriba */
-  justify-content: flex-start;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-}
-
-/* Logo */
-.logo img {
-  height: 80px; /* tamaño original */
-  object-fit: contain;
-}
-
-/* Bloque nombre + slogan */
-.title-block {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-/* Nombre del sitio */
-.site-title {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 2.2rem; /* tamaño grande */
-  color: #003366;
-}
-
-/* Separador */
-.separator {
-  font-size: 2rem;
-  color: #888888;
-}
-
-/* Slogan */
-.site-slogan {
-  font-family: 'Merriweather', serif;
-  font-size: 1.6rem; /* tamaño grande */
-  font-style: italic;
-  color: #3399ff;
-}
-
-/* Menú de navegación */
-nav {
-  margin-top: 0.5rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-  position: relative;
-}
-
-nav li {
-  position: relative;
-}
-
-nav a, .dropdown-toggle {
-  text-decoration: none;
-  font-weight: bold;
-  color: #0056b3;
-  transition: color 0.3s;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-nav a:hover, .dropdown-toggle:hover {
-  color: #3399ff;
-}
-
-/* Dropdown */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.5rem 0;
-  min-width: 220px;
-  z-index: 1000;
-}
-
-.dropdown-content li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #0056b3;
-}
-
-.dropdown-content li a:hover {
-  background: #f0f0f0;
-}
-
-/* Mostrar en hover (escritorio) */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Mostrar al hacer clic (móviles) */
-.dropdown.open .dropdown-content {
-  display: block;
-}
 
 
 
