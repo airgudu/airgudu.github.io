@@ -10,7 +10,6 @@ body {
   line-height: 1.6;
   background: #f4f4f9;
   color: #333333;
-  text-align: justify;
 }
 
 /* ==============================
@@ -20,7 +19,7 @@ main {
   max-width: 1024px;
   margin: 0 auto;
   padding: 11rem 2rem 3rem; /* espacio para header fijo */
-  text-align: justify;
+  text-align: justify; /* solo main tiene justify */
 }
 
 /* ==============================
@@ -119,7 +118,7 @@ p {
 }
 
 /* ==============================
-   Header principal
+   Header original (recuperado)
    ============================== */
 header {
   background: white;
@@ -129,10 +128,10 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
-  text-align: left;
+  text-align: left; /* mantener a la izquierda */
 }
 
-/* Contenedor del logo y título */
+/* Contenedor logo + título */
 .header-container {
   display: flex;
   align-items: flex-start; /* alinea logo y texto arriba */
@@ -147,7 +146,7 @@ header {
   object-fit: contain;
 }
 
-/* Contenedor de nombre + slogan */
+/* Bloque nombre + slogan */
 .title-block {
   display: flex;
   align-items: flex-start;
@@ -159,7 +158,7 @@ header {
 .site-title {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 2.2rem; /* tamaño grande */
   color: #003366;
 }
 
@@ -172,14 +171,12 @@ header {
 /* Slogan */
 .site-slogan {
   font-family: 'Merriweather', serif;
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* tamaño grande */
   font-style: italic;
   color: #3399ff;
 }
 
-/* ==============================
-   Menú de navegación
-   ============================== */
+/* Menú de navegación */
 nav {
   margin-top: 0.5rem;
 }
@@ -246,6 +243,7 @@ nav a:hover, .dropdown-toggle:hover {
 .dropdown.open .dropdown-content {
   display: block;
 }
+
 
 
 
