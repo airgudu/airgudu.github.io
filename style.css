@@ -129,12 +129,13 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+  text-align: left;
 }
 
 /* Contenedor del logo y título */
 .header-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* alinea logo y texto arriba */
   justify-content: flex-start;
   gap: 1rem;
   padding: 0.5rem 1rem;
@@ -142,18 +143,19 @@ header {
 
 /* Logo */
 .logo img {
-  height: 80px;
+  height: 80px; /* tamaño original */
   object-fit: contain;
 }
 
 /* Contenedor de nombre + slogan */
 .title-block {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
+/* Nombre del sitio */
 .site-title {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
@@ -161,11 +163,13 @@ header {
   color: #003366;
 }
 
+/* Separador */
 .separator {
   font-size: 2rem;
   color: #888888;
 }
 
+/* Slogan */
 .site-slogan {
   font-family: 'Merriweather', serif;
   font-size: 1.6rem;
@@ -173,7 +177,9 @@ header {
   color: #3399ff;
 }
 
-/* Menú de navegación */
+/* ==============================
+   Menú de navegación
+   ============================== */
 nav {
   margin-top: 0.5rem;
 }
@@ -231,14 +237,15 @@ nav a:hover, .dropdown-toggle:hover {
   background: #f0f0f0;
 }
 
-/* Mostrar dropdown en hover (escritorio) */
+/* Mostrar en hover (escritorio) */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Mostrar dropdown al hacer clic (móviles) */
+/* Mostrar al hacer clic (móviles) */
 .dropdown.open .dropdown-content {
   display: block;
 }
+
 
 
